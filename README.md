@@ -9,9 +9,15 @@
     2. Create a database and update application.yml and application-test.yml files
     3. setup RabbitMQ and update application.yml and application-test.yml files 
     4. Make sure Java 11 SDK or above is installed
-    5. update application.yml and application-test.yml files to replace mail properties
+    5. update application.yml and application-test.yml files to replace mail properties (I tested using mailtrap(https://mailtrap.io))
     NB: sample properties were left for guidance purpose
-    
+
+    Sample docker command to setup MS SQL Server 2019
+    docker run --name my-mssql19 -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=Password@1" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest
+
+    Sample docker command to setup RabbitMQ
+    docker run -d --hostname my-host-rabbit --name my-rabbit -p 15672:15672 rabbitmq:3-management
+
 
 ### How to access Swagger/OpenAPI documentation
         http://localhost:8080/demo/swagger-ui.html
