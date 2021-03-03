@@ -33,21 +33,21 @@ import static com.chrisgya.tryout.util.SQLUtils.conflictSQLErrorMessage;
 public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(BadRequestException.class)
-    public final ResponseEntity<?> handleBadRequestExceptions(BadRequestException e, WebRequest webRequest) {
+    public final ResponseEntity<Object> handleBadRequestExceptions(BadRequestException e, WebRequest webRequest) {
         log.error("BadRequestException:: {}", e);
         var response = new ErrorMessage(HttpStatus.BAD_REQUEST.value(), new Date(), e.getMessage(), webRequest.getDescription(false));
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(NotFoundException.class)
-    public final ResponseEntity<?> handleNotFoundExceptions(NotFoundException e, WebRequest webRequest) {
+    public final ResponseEntity<Object> handleNotFoundExceptions(NotFoundException e, WebRequest webRequest) {
         var response = new ErrorMessage(HttpStatus.NOT_FOUND.value(), new Date(), e.getMessage(), webRequest.getDescription(false));
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 
 
     @ExceptionHandler(ConstraintViolationException.class)
-    public final ResponseEntity<?> ConstraintViolationException(ConstraintViolationException e) {
+    public final ResponseEntity<Object> ConstraintViolationException(ConstraintViolationException e) {
         Set<ConstraintViolation<?>> constraintViolations = e.getConstraintViolations();
 
         List<ValidationError> validationErrors = new ArrayList<>();
@@ -76,7 +76,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(DataAccessException.class)
-    public final ResponseEntity<?> handleDataAccessException(DataAccessException e, WebRequest webRequest) {
+    public final ResponseEntity<Object> handleDataAccessException(DataAccessException e, WebRequest webRequest) {
         log.error("DataAccessException:: {}", e);
 
         HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
@@ -95,7 +95,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
 
     @ExceptionHandler(Exception.class)
-    public final ResponseEntity<?> UnhandledExceptions(Exception e) {
+    public final ResponseEntity<Object> UnhandledExceptions(Exception e) {
         log.error("Exception:: {}", e);
 
         var response = new ErrorMessage(HttpStatus.INTERNAL_SERVER_ERROR.value(), new Date(), e.getMessage(), "");

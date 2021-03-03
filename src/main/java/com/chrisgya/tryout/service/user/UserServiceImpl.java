@@ -80,9 +80,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Page<UserResponse> getUsers(Integer pageNumber, Integer pageSize) {
-        pageNumber = pageNumber == null || pageNumber < 1 ? DEFAULT_PAGE_NUMBER : pageNumber;
-        pageSize = pageSize == null || pageSize < 1 ? DEFAULT_PAGE_SIZE : pageSize;
-        return userDao.findAll(pageNumber, pageSize);
+       var finalPageNumber = pageNumber == null || pageNumber < 1 ? DEFAULT_PAGE_NUMBER : pageNumber;
+       var finalPageSize = pageSize == null || pageSize < 1 ? DEFAULT_PAGE_SIZE : pageSize;
+        return userDao.findAll(finalPageNumber, finalPageSize);
     }
 
    private UserResponse getUser(Long id) {

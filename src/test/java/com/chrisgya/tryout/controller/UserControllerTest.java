@@ -17,8 +17,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 import reactor.core.publisher.Mono;
 
 import java.util.concurrent.atomic.AtomicReference;
-
-import static com.chrisgya.tryout.util.ConstantUtil.BASE_URI;
 import static com.chrisgya.tryout.util.ConstantsUtils.*;
 import static com.chrisgya.tryout.util.FakerUtil.*;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -35,7 +33,7 @@ class UserControllerTest {
     private WebTestClient webTestClient;
 
     private String createURI(String path) {
-        return UriComponentsBuilder.fromUriString(String.format(BASE_URI, port, path)).build().toUriString();
+        return UriComponentsBuilder.fromUriString(String.format("http://localhost:%s/demo/api/%s", port, path)).build().toUriString();
     }
 
 

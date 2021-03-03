@@ -20,10 +20,11 @@ public abstract class AbstractDao<T> {
     protected static final String RESULT_COUNT = "count";
     protected static final String RETURN_VALUE = "RETURN_VALUE";
     protected JdbcTemplate jdbcTemplate;
-    protected SimpleJdbcCall create, update, delete, find, findAll;
-
-    public AbstractDao() {
-    }
+    protected SimpleJdbcCall create;
+    protected SimpleJdbcCall update;
+    protected SimpleJdbcCall delete;
+    protected SimpleJdbcCall find;
+    protected SimpleJdbcCall findAll;
 
     public abstract void setDataSource(DataSource var1);
 
@@ -64,9 +65,6 @@ public abstract class AbstractDao<T> {
     }
 
     public class RowCountMapper implements RowMapper {
-        public RowCountMapper() {
-        }
-
         public Long mapRow(ResultSet rs, int rowNum) throws SQLException {
             return rs.getLong(1);
         }

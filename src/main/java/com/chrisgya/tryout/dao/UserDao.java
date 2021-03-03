@@ -15,7 +15,7 @@ import java.util.Map;
 @Repository
 public class UserDao extends AbstractDao<UserResponse> {
 
-    SimpleJdbcCall verifyUser;
+   private SimpleJdbcCall verifyUser;
 
     @Autowired
     @Override

@@ -2,7 +2,7 @@
     using stored procedures and JDBC help you to achieve high performance and avoid unnessary overhead with JPA
 
 ## Why I chose integration test over unit test
-    using integration test help to have end to end test of the entire service from controller layer to database layer    
+    using integration test help to have end to end test of the entire service from controller layer to database layer
 
 ## Getting Started 
     1. setup MS SQL Server and run it. This demo service was tested against MS SQL Version 2019
@@ -18,12 +18,11 @@
     Sample docker command to setup RabbitMQ
     docker run -d --hostname my-host-rabbit --name my-rabbit -p 15672:15672 rabbitmq:3-management
 
-
-### How to access Swagger/OpenAPI documentation
+## How to access Swagger/OpenAPI documentation
         http://localhost:8080/demo/swagger-ui.html
         http://localhost:8080/demo/v3/api-docs
 
-### How to use the API with curl with sample commands
+## How to use the API with curl with sample commands
     Retrieve users with default pagination settings
     curl -X GET "http://localhost:8080/demo/api/users"
     
@@ -41,6 +40,3 @@
 
     Update existing user
     curl -X PUT "http://localhost:8080/demo/api/user/1" -H "accept: */*" -H "Content-Type: application/json" -d "{\"title\":\"Mr\",\"firstName\":\"Sammy\",\"lastName\":\"Doe\",\"mobile\":\"+2347089760744\",\"role\":\"USER\"}"
-
-
-
