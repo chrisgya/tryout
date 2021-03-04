@@ -19,7 +19,7 @@ public class FakerUtil {
     }
 
     public static String getMobileNumber() {
-        return  faker.phoneNumber().cellPhone();
+         return "234808" + faker.number().digits(7);
     }
 
     public static String getEmailAddress() {

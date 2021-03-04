@@ -1,8 +1,10 @@
 package com.chrisgya.tryout.model.request;
 
 import com.chrisgya.tryout.model.RoleEnum;
+import com.chrisgya.tryout.util.validation.Phone;
 import com.chrisgya.tryout.util.validation.ValueOfEnum;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Builder;
 import lombok.Data;
@@ -33,12 +35,11 @@ public class UpdateUserRequest {
 
     @Schema(description = "mobile", example = "+2347087760744", required = true)
     @NotBlank(message = "required")
-    @Size(max = 16)
+    @Phone
     private String mobile;
 
     @Schema(example = "USER", required = true)
     @NotBlank(message = "required")
     @ValueOfEnum(enumClass = RoleEnum.class, message = "must be either 'USER' or 'ADMIN'")
     private String role;
-
 }
