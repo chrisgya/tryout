@@ -27,13 +27,13 @@
     docker run -d --hostname my-host-rabbit --name my-rabbit -p 15672:15672 rabbitmq:3-management
 
 ## How to access Swagger/OpenAPI documentation
-        https://app-tryout.azurewebsites.net/demo/swagger-ui.html
+        https://try-out.herokuapp.com/demo/swagger-ui.html
         http://localhost:8080/demo/swagger-ui.html
         http://localhost:8080/demo/v3/api-docs
 
 ## How to use the API with curl with sample commands
     Retrieve users with default pagination settings
-    curl -X GET "http://localhost:8080/demo/api/users"
+    curl -X GET "https://try-out.herokuapp.com/demo/api/users"
     
     Retrieve users with specific pagination values
     curl -X GET "http://localhost:8080/demo/api/users?pageNumber=1&pageSize=10"
