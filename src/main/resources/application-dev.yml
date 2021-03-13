@@ -6,7 +6,7 @@ server:
 
 spring:
   profiles:
-    active: prod
+    active: dev
   application:
     name: demo-services
   lifecycle:
@@ -17,23 +17,24 @@ spring:
         pool:
           size: 100
     driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://chrissqldemoserver.database.windows.net:1433;database=demo_db;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-    username: demo_sa@chrissqldemoserver
+    url: jdbc:sqlserver://127.0.0.1;databaseName=demo_db;portNumber=1433
+    username: sa
     password: Password@1
 
   flyway:
-    driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    url: jdbc:sqlserver://chrissqldemoserver.database.windows.net:1433;database=demo_db;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-    user: demo_sa@chrissqldemoserver
+    user: sa
     password: Password@1
   rabbitmq:
-    host: amqps://lwbhtyvo:Ni7ydb_NEX-cYcpe11Dur1N6u9eZaPsm@codfish.rmq.cloudamqp.com/lwbhtyvo
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
   mail:
     default-encoding: UTF-8
     host: smtp.mailtrap.io
-    username: 4128011bd36b9e
-    password: d1373a16c84103
+    username: ba82994703feaa
+    password: ea2c03a9a0d824
     port: 2525
     properties:
       mail:

@@ -1,3 +1,11 @@
+##  Access Emails using MailTrap service(https://mailtrap.io) 
+    1. Open your browser and enter https://mailtrap.io
+    2. Login with "Use Google account" option and enter the credentials below to login
+        email: chrisgyadev@gmail.com
+        Password: tryoutDev@12
+    3. Click on Inboxes on the sidebar
+    4. Click on "My Inbox" to view all the mails
+
 ## Why I chose JDBC (and stored procedures) over JPA(ORM)
     using stored procedures and JDBC help you to achieve high performance and avoid unnessary overhead with JPA
 
@@ -19,6 +27,7 @@
     docker run -d --hostname my-host-rabbit --name my-rabbit -p 15672:15672 rabbitmq:3-management
 
 ## How to access Swagger/OpenAPI documentation
+        https://app-tryout.azurewebsites.net/demo/swagger-ui.html
         http://localhost:8080/demo/swagger-ui.html
         http://localhost:8080/demo/v3/api-docs
 
