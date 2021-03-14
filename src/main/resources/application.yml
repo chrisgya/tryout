@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:8080}
+  port: 8080
   servlet:
     context-path: /demo
   shutdown: graceful
@@ -27,7 +27,7 @@ spring:
     user: demo_sa@chrissqldemoserver
     password: Password@1
   rabbitmq:
-    host: amqps://lwbhtyvo:Ni7ydb_NEX-cYcpe11Dur1N6u9eZaPsm@codfish.rmq.cloudamqp.com/lwbhtyvo
+    host: amqps://lwbhtyvo:Ni7ydb_NEX-cYcpe11Dur1N6u9eZaPsm@[2001:db8:85a3:8d3:1319:8a2e:370:7348]/lwbhtyvo
 
   mail:
     default-encoding: UTF-8

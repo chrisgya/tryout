@@ -44,8 +44,8 @@ FROM users
 ORDER BY id OFFSET @offset ROWS FETCH NEXT @page_size ROWS ONLY;
 
 GO
-GRANT  EXECUTE  ON proc_get_users TO demo_user;
-GO
+--GRANT  EXECUTE  ON proc_get_users TO demo_user;
+--GO
 
 
 -----------------------------------------------------------------------
@@ -84,8 +84,8 @@ FROM users
 WHERE id=@id;
 
 GO
-GRANT  EXECUTE  ON proc_get_user TO demo_user;
-GO
+--GRANT  EXECUTE  ON proc_get_user TO demo_user;
+--GO
 
 -----------------------------------------------------------------------
 ---											proc_create_user														---
@@ -128,8 +128,8 @@ FROM users
 WHERE id = SCOPE_IDENTITY();
 
 GO
-GRANT  EXECUTE  ON proc_create_user TO demo_user;
-GO
+--GRANT  EXECUTE  ON proc_create_user TO demo_user;
+--GO
 
 
 
@@ -164,8 +164,8 @@ WHERE id=@id;
 SELECT @RETURN_VALUE = @@ROWCOUNT;
 
 GO
-GRANT  EXECUTE  ON proc_update_user TO demo_user;
-GO
+--GRANT  EXECUTE  ON proc_update_user TO demo_user;
+--GO
 
 
 ---------------------------------------------------------------------------
@@ -193,8 +193,8 @@ WHERE id=@id;
 SELECT @RETURN_VALUE = @@ROWCOUNT;
 
 GO
-GRANT  EXECUTE  ON proc_deactivate_user TO demo_user;
-GO
+--GRANT  EXECUTE  ON proc_deactivate_user TO demo_user;
+--GO
 
 
 -----------------------------------------------------------------------
@@ -225,8 +225,8 @@ WHERE verification_code=@verification_code;
 SELECT @RETURN_VALUE = @@ROWCOUNT;
 
 GO
-GRANT  EXECUTE  ON proc_verify_user TO demo_user;
-GO
+--GRANT  EXECUTE  ON proc_verify_user TO demo_user;
+--GO
 
 
 

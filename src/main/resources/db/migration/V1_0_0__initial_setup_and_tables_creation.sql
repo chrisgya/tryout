@@ -1,25 +1,26 @@
+-- commented because it's not supported on Azure as I created again on-premise SQL Server
 ---------------------------------------------- ------------------------------------
-PRINT 'Creating Login user for demo_db'
+-- PRINT 'Creating Login user for demo_db'
 -----------------------------------------------------------------------------------
-IF NOT EXISTS(SELECT * FROM sys.server_principals  WHERE name = N'demo_user')
-  BEGIN
-    CREATE LOGIN demo_user WITH PASSWORD = N'Password@1', DEFAULT_DATABASE = demo_db, DEFAULT_LANGUAGE =[us_english], CHECK_EXPIRATION = OFF, CHECK_POLICY = OFF
-  END
-GO
+--IF NOT EXISTS(SELECT * FROM sys.server_principals  WHERE name = N'demo_user')
+--  BEGIN
+--    CREATE LOGIN demo_user WITH PASSWORD = N'Password@1', DEFAULT_DATABASE = demo_db, DEFAULT_LANGUAGE =[us_english], CHECK_EXPIRATION = OFF, CHECK_POLICY = OFF
+--  END
+-- GO
 
 USE demo_db
 GO
 
 ---------------------------------------------- ------------------------------------
-PRINT 'Creating Role and grant member access to demo_db'
+-- PRINT 'Creating Role and grant member access to demo_db'
 -----------------------------------------------------------------------------------
-IF NOT EXISTS(SELECT * FROM sys.database_principals WHERE (name = N'demo_app') AND (type = N'R'))
-BEGIN
-CREATE ROLE demo_app
-CREATE USER demo_user FOR LOGIN demo_user
-ALTER ROLE demo_app ADD MEMBER demo_user
-END
-GO
+--IF NOT EXISTS(SELECT * FROM sys.database_principals WHERE (name = N'demo_app') AND (type = N'R'))
+--BEGIN
+--CREATE ROLE demo_app
+--CREATE USER demo_user FOR LOGIN demo_user
+--ALTER ROLE demo_app ADD MEMBER demo_user
+--END
+--GO
 
 
 ---------------------------------------------- ------------------------------------
