@@ -1,10 +1,7 @@
 ##  Access Emails using MailTrap service(https://mailtrap.io) 
     1. Open your browser and enter https://mailtrap.io
-    2. Login with "Use Google account" option and enter the credentials below to login
-        email: chrisgyadev@gmail.com
-        Password: tryoutDev@12
-    3. Click on Inboxes on the sidebar
-    4. Click on "My Inbox" to view all the mails
+    2. Create account and replace application.yml maitrap username and password
+    NB: you can use any Mail client of your choice
 
 ## Why I chose JDBC (and stored procedures) over JPA(ORM)
     using stored procedures and JDBC help you to achieve high performance and avoid unnessary overhead with JPA
@@ -27,13 +24,13 @@
     docker run -d --hostname my-host-rabbit --name my-rabbit -p 15672:15672 rabbitmq:3-management
 
 ## How to access Swagger/OpenAPI documentation
-        https://try-out.herokuapp.com/demo/swagger-ui.html
+        http://localhost:8080/demo/swagger-ui.html
         http://localhost:8080/demo/swagger-ui.html
         http://localhost:8080/demo/v3/api-docs
 
 ## How to use the API with curl with sample commands
     Retrieve users with default pagination settings
-    curl -X GET "https://try-out.herokuapp.com/demo/api/users"
+    curl -X GET "http://localhost:8080/demo/api/users"
     
     Retrieve users with specific pagination values
     curl -X GET "http://localhost:8080/demo/api/users?pageNumber=1&pageSize=10"
